@@ -66,7 +66,11 @@ private:
     int pooWidth = 24;
     int pooHeight = 24;
     bool isStarted = false;
-    int velocityX = 2;
-    int velocityY = 2;
+    int velocityX0 = 1;
+    int velocityY0 = 1;
+    int velocityX1 = 1;
+    int velocityY1 = 1;
+    int velocityX2 = 1;
+    int velocityY2 = 1;
 	/********************************/
 };

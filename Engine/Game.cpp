@@ -29059,14 +29059,29 @@ void Game::ComposeFrame()
         DrawFace(dudeX, dudeY);
         if (!poo0IsEaten)
         {
+            if (poo0X <= 0 || poo0X >= gfx.ScreenWidth)
+            {
+                velocityX = -velocityX;
+            }
+            if (poo0Y <= 0 || poo0Y >= gfx.ScreenHeight)
+            {
+                velocityY = -velocityY;
+            }
+
+            poo0X += velocityX;
+            poo0Y += velocityY;
             DrawPoo(poo0X, poo0Y);
         }
         if (!poo1IsEaten)
         {
+            poo1X += velocityX;
+            poo1Y += velocityY;
             DrawPoo(poo1X, poo1Y);
         }
         if (!poo2IsEaten)
         {
+            poo2X += velocityX;
+            poo2Y += velocityY;
             DrawPoo(poo2X, poo2Y);
         }
     }

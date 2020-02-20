@@ -31,12 +31,19 @@ Game::Game( MainWindow& wnd )
     std::mt19937 rng(rd());
     std::uniform_int_distribution<int> xDist( 0, 770 );
     std::uniform_int_distribution<int> yDist( 0, 570);
+    std::uniform_int_distribution<int> v(-3,3);
     poo0X = xDist(rng);
     poo0Y = yDist(rng);
     poo1X = xDist(rng);
     poo1Y = yDist(rng);
     poo2X = xDist(rng);
     poo2Y = yDist(rng);
+    velocityX0 = v(rng);
+    velocityY0 = v(rng);
+    velocityX1 = v(rng);
+    velocityY1 = v(rng);
+    velocityX2 = v(rng);
+    velocityY2 = v(rng);
 }
 
 void Game::Go()

@@ -60,19 +60,19 @@ void Game::UpdateModel()
     {
         if (wnd.kbd.KeyIsPressed(VK_RIGHT))
         {
-            dudeX += 1;
+            dudeX += 2;
         }
         if (wnd.kbd.KeyIsPressed(VK_LEFT))
         {
-            dudeX -= 1;
+            dudeX -= 2;
         }
         if (wnd.kbd.KeyIsPressed(VK_UP))
         {
-            dudeY -= 1;
+            dudeY -= 2;
         }
         if (wnd.kbd.KeyIsPressed(VK_DOWN))
         {
-            dudeY += 1;
+            dudeY += 2;
         }
 
         dudeX = ClampScreenX(dudeX, dudeWidth);
@@ -29066,11 +29066,11 @@ void Game::ComposeFrame()
         DrawFace(dudeX, dudeY);
         if (!poo0IsEaten)
         {
-            if (poo0X <= 0 || poo0X + pooWidth >= gfx.ScreenWidth -1)
+            if (poo0X + velocityX0 <= 0 || poo0X + pooWidth >= gfx.ScreenWidth -1)
             {
                 velocityX0 = -velocityX0;
             }
-            if (poo0Y <= 0 || poo0Y + pooHeight >= gfx.ScreenHeight -1)
+            if (poo0Y + velocityY0 <= 0 || poo0Y + pooHeight >= gfx.ScreenHeight -1)
             {
                 velocityY0 = -velocityY0;
             }
@@ -29081,11 +29081,11 @@ void Game::ComposeFrame()
         }
         if (!poo1IsEaten)
         {
-            if (poo1X <= 0 || poo1X + pooWidth >= gfx.ScreenWidth -1)
+            if (poo1X + velocityX1 <= 0 || poo1X + pooWidth >= gfx.ScreenWidth -1)
             {
                 velocityX1 = -velocityX1;
             }
-            if (poo1Y <= 0 || poo1Y + pooHeight >= gfx.ScreenHeight -1)
+            if (poo1Y + velocityY1 <= 0 || poo1Y + pooHeight >= gfx.ScreenHeight -1)
             {
                 velocityY1 = -velocityY1;
             }
@@ -29095,11 +29095,11 @@ void Game::ComposeFrame()
         }
         if (!poo2IsEaten)
         {
-            if (poo2X <= 0 || poo2X + pooWidth >= gfx.ScreenWidth -1)
+            if (poo2X + velocityX2 <= 0 || poo2X + pooWidth >= gfx.ScreenWidth -1)
             {
                 velocityX2 = -velocityX2;
             }
-            if (poo2Y <= 0 || poo2Y + pooHeight >= gfx.ScreenHeight -1)
+            if (poo2Y +velocityY2 <= 0 || poo2Y + pooHeight >= gfx.ScreenHeight -1)
             {
                 velocityY2 = -velocityY2;
             }
